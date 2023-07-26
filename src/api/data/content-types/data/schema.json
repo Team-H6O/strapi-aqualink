@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "datas",
+  "info": {
+    "singularName": "data",
+    "pluralName": "datas",
+    "displayName": "Data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "float",
+      "required": true
+    },
+    "sensor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sensor.sensor",
+      "inversedBy": "data"
+    },
+    "datetime": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}

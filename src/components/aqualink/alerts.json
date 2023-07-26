@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_aqualink_alerts",
+  "info": {
+    "displayName": "Alerts",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "warning",
+        "alert"
+      ],
+      "required": true,
+      "default": "warning"
+    },
+    "threshold": {
+      "type": "decimal",
+      "required": true
+    }
+  }
+}

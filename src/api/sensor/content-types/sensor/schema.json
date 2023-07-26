@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sensors",
+  "info": {
+    "singularName": "sensor",
+    "pluralName": "sensors",
+    "displayName": "Sensor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sensors"
+    },
+    "Alerts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "aqualink.alerts",
+      "required": false
+    },
+    "room": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::room.room",
+      "inversedBy": "sensors"
+    },
+    "data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::data.data",
+      "mappedBy": "sensor"
+    }
+  }
+}

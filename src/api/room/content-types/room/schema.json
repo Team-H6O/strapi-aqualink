@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rooms",
+  "info": {
+    "singularName": "room",
+    "pluralName": "rooms",
+    "displayName": "Room",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "sensors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sensor.sensor",
+      "mappedBy": "room"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rooms"
+    }
+  }
+}
